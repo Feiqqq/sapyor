@@ -1,27 +1,26 @@
 #include <iostream>
-// Вульферт Антон, Пи-192//
+// Vulfert Anton, Pi-192//
 
 int main()
 {
 	setlocale(LC_ALL, "Ru");
-	int rows;// строка
-	int cols;// стоблец
-	std::cout << "Введите размер массива. Количество строк" << std::endl;
+	int rows;
+	int cols;
+	std::cout << "Enter the size of the array. Number of rows" << std::endl;
 	std::cin >> rows;
 
-	std::cout << "Введите размер массива. Количество столбцов" << std::endl;
+	std::cout << "Enter the size of the array. Number of columns" << std::endl;
 	std::cin >> cols;
-	char **arr = new char*[rows]; // создание основного массива, куда будет осуществляться записть
-	for (int i = 0; i < rows; i++)
+	char **arr = new char*[rows]; // creating the main array to write to
 	{
 		arr[i] = new char[cols];
 	}
-	int **newArr = new int*[rows]; // создание доп.массива, который будет отредактирован
+	int **newArr = new int*[rows]; // creating an additional array to be edited
 	for (int i = 0; i < rows; i++)
 	{
 		newArr[i] = new int[cols];
 	}
-	for (int i = 0; i < rows; i++) //заполнение доп.массива нулями
+	for (int i = 0; i < rows; i++) // fill an additional array null
 	{
 		for (int j = 0; j < cols; j++)
 		{
@@ -31,7 +30,7 @@ int main()
 	}
 
 	system("cls");
-	std::cout << "Заполните поле: " << std::endl;// заполнение основного массива
+	std::cout << "Заполните поле: " << std::endl;// fill main array
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
@@ -40,7 +39,7 @@ int main()
 		}
 
 	}
-	system("cls");//очистка экрана
+	system("cls");// cleaning
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
@@ -62,7 +61,7 @@ int main()
 	}
 	std::cout << rows << " " << cols << std::endl;
 	std::cout << "________________" << std::endl;
-	for (int i = 0; i < rows; i++)// вывод основного массива
+	for (int i = 0; i < rows; i++)// output main array
 	{
 		for (int j = 0; j < cols; j++)
 		{
@@ -72,7 +71,7 @@ int main()
 		std::cout << std::endl;
 	}
 	std::cout << "________________" << std::endl;
-	for (int i = 0; i < rows; i++)// вывод доп.массива
+	for (int i = 0; i < rows; i++)// output additional array
 	{
 		for (int j = 0; j < cols; j++)
 		{
@@ -83,7 +82,7 @@ int main()
 		std::cout << std::endl;
 	}
 
-	//////////////////////////////////////////////////// очистка оперативной памяти
+	//////////////////////////////////////////////////// clean Ram
 	for (int i = 0; i < rows; i++)
 	{
 		delete[] arr[i];
